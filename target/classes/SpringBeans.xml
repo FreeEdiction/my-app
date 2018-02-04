@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id="helloBean" class="com.mycompany.app.HelloWorld">
+		<property name="name" value="Sokur" />
+	</bean>
+
+	<bean id="duke" class="com.mycompany.app.Juggler" />
+
+	<bean id="duke1" class="com.mycompany.app.Juggler">
+		<constructor-arg value="15" />
+	</bean>
+
+	<bean id="kenny" class="com.mycompany.app.Instrumentalist">
+		<property name="song" value="Jingle Bells" />
+		<property name="instrument" ref="saxophone" />
+	</bean>
+
+	<bean id="saxophone" class="com.mycompany.app.Saxophone" />
+	<bean id="piano" class="com.mycompany.app.Piano" />
+	
+	<bean id="hank" class="com.mycompany.app.OneManBand">
+		<property name="instruments">
+			<list>
+				<ref bean="saxophone" />
+				<ref bean="piano" />
+			</list>
+		</property>
+	</bean>
+
+</beans>
